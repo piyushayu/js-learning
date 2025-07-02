@@ -3,10 +3,18 @@
 {
 	"name": "Node.js",
 	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
-	"image": "mcr.microsoft.com/devcontainers/javascript-node:1-22-bookworm"
+	"image": "mcr.microsoft.com/devcontainers/javascript-node:1-22-bookworm",
 
 	// Features to add to the dev container. More info: https://containers.dev/features.
-	// "features": {},
+	 "features": { 
+		 "ghcr.io/devcontainers/features/node:1": {
+    "version": "20"
+		 }
+},
+  "forwardPorts": [],
+  "postCreateCommand": "yarn install",
+
+
 
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
 	// "forwardPorts": [],
@@ -22,11 +30,11 @@
 				"vscode-icons-team.vscode-icons",
 				"wayou.vscode-todo-highlight"
 			],
-			"settings": {
+			//"settings": {
 				"editor.fontSize": 32,
 				"terminal.integrated.fontSize": 24,
 				"editor.wordWrap": "on"
-			}
+			}//
 			
 		}
 	
@@ -34,4 +42,4 @@
 
 	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
 	// "remoteUser": "root"
-}
+
